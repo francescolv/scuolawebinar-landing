@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>scuolawebinar.it è ora Sintab Academy</title>
+<meta name="description" content="scuolawebinar.it è diventato Sintab Academy. ABA, Inglese, Certificazioni Informatiche IDCert, Laurea online eCampus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-soft:#F6F2FB;
+    --ink:#34235A;
+    --ink-soft:#5C5470;
+    --ink-faint: rgba(52,35,90,0.55);
+    --line: rgba(52,35,90,0.15);
+    --accent:#8A63B0;
+    --accent-dark:#3B2A63;
+    --button:#7C5A9E;
+    --dark-bg:#34235A;
+    --radius: 999px;
+    --radius-sm: 8px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Inter', sans-serif;
+    font-weight:800;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  a{ color:inherit; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 120px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    position:relative;
+    z-index:2;
+  }
+  .old-name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.95rem;
+    letter-spacing:0.02em;
+    color:var(--ink-faint);
+    text-decoration:line-through;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness:2px;
+    margin-bottom:18px;
+    opacity:0;
+    animation: rise 0.7s ease-out 0.05s forwards;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+    opacity:0;
+    animation: rise 0.8s ease-out 0.15s forwards;
+  }
+  .hero h1 .light{
+    font-weight:800;
+    color:var(--accent);
+  }
+  .hero p.sub{
+    margin-top:22px;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    opacity:0;
+    animation: rise 0.8s ease-out 0.3s forwards;
+  }
+
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* Seal / stamp signature element */
+  .seal{
+    position:absolute;
+    right:-40px;
+    top:60px;
+    width:230px;
+    height:230px;
+    z-index:1;
+    opacity:0;
+    animation: stamp 0.6s cubic-bezier(.2,1.4,.4,1) 0.6s forwards;
+  }
+  @keyframes stamp{
+    0%{ opacity:0; transform:scale(1.6) rotate(-14deg); }
+    70%{ opacity:1; }
+    100%{ opacity:1; transform:scale(1) rotate(-8deg); }
+  }
+  .seal svg{ width:100%; height:100%; }
+
+  /* ---------- REASSURANCE ---------- */
+  .reassure{
+    background:var(--paper-soft);
+    padding:72px 0;
+  }
+  .ticket{
+    background:var(--paper);
+    max-width:720px;
+    margin:0 auto;
+    padding:40px 44px;
+    border:1.5px dashed rgba(52,35,90,0.35);
+    border-radius:20px;
+    position:relative;
+  }
+  .ticket::before, .ticket::after{
+    content:"";
+    position:absolute;
+    width:26px; height:26px;
+    background:var(--paper-soft);
+    border-radius:50%;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .ticket::before{ left:-13px; }
+  .ticket::after{ right:-13px; }
+  .ticket .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:10px;
+    display:block;
+  }
+  .ticket h2{
+    font-size:1.5rem;
+    margin-bottom:14px;
+  }
+  .ticket p{
+    color:var(--ink-soft);
+    margin:0 0 22px;
+    font-size:1.02rem;
+  }
+  .mail-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--button);
+    color:#fff;
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:var(--radius);
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .mail-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(124,90,158,0.35); }
+
+  /* ---------- PRODUCTS ---------- */
+  .products{
+    padding:96px 0 80px;
+  }
+  .products .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .products h2{
+    font-size:clamp(1.8rem, 3.5vw, 2.4rem);
+    max-width:20ch;
+    margin-bottom:52px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media (max-width:720px){
+    .grid{ grid-template-columns:1fr; }
+  }
+  .card{
+    background:var(--paper);
+    padding:36px 34px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition:background 0.2s ease;
+  }
+  .card:hover{ background:var(--paper-soft); }
+  .card .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:600;
+  }
+  .card h3{
+    font-size:1.35rem;
+    font-weight:600;
+  }
+  .card p{
+    color:var(--ink-soft);
+    font-size:0.98rem;
+    margin:0;
+    flex-grow:1;
+  }
+  .card .link{
+    margin-top:6px;
+    font-weight:600;
+    font-size:0.95rem;
+    text-decoration:none;
+    color:var(--button);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .card .link .arrow{ transition:transform 0.15s ease; }
+  .card:hover .link .arrow{ transform:translateX(4px); }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:var(--dark-bg);
+    padding:88px 0;
+    text-align:center;
+  }
+  .final-cta h2{
+    color:var(--paper);
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    max-width:16ch;
+    margin:0 auto 30px;
+  }
+  .btn-gold{
+    display:inline-block;
+    background:#FFFFFF;
+    color:var(--ink);
+    text-decoration:none;
+    font-weight:700;
+    font-size:1.05rem;
+    padding:16px 36px;
+    border-radius:var(--radius);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-gold:hover{ transform:translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.25); }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:36px 0;
+    text-align:center;
+    font-size:0.85rem;
+    color:var(--ink-faint);
+  }
+  footer a{ color:var(--ink-soft); text-decoration:underline; }
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--wine);
+    outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .old-name, .hero h1, .hero p.sub, .seal{
+      animation:none !important;
+      opacity:1 !important;
+      transform:none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="old-name">scuolawebinar.it</span>
+    <h1>Ora è <span class="light">Sintab Academy</span></h1>
+    <p class="sub">Stessa missione, formazione più ampia: ABA, lingue, certificazioni informatiche, laurea online.</p>
+  </div>
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#8A63B0" stroke-width="3"/>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="#8A63B0" stroke-width="1.5" stroke-dasharray="2 4"/>
+      <path id="sealCirclePath" fill="none" d="M 100,20 A 80,80 0 1,1 99.9,20"/>
+      <text font-family="IBM Plex Mono, monospace" font-size="11.5" letter-spacing="2" fill="#8A63B0" font-weight="600">
+        <textPath href="#sealCirclePath" startOffset="2%">
+          SINTAB ACADEMY • CONTINUITÀ GARANTITA •
+        </textPath>
+      </text>
+      <text x="100" y="94" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" font-weight="800" fill="#34235A">DA</text>
+      <text x="100" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" font-weight="800" fill="#34235A">2026</text>
+    </svg>
+  </div>
+</section>
+
+<section class="reassure">
+  <div class="wrap">
+    <div class="ticket">
+      <span class="tag">Iscritti storici</span>
+      <h2>Sei iscritto a scuolawebinar.it?</h2>
+      <p>Nessun corso o attestato viene perso. Scrivi a <strong>academy@sintab.it</strong> e ricevi tutte le informazioni per migrare sulla nuova piattaforma.</p>
+      <a class="mail-btn" href="mailto:academy@sintab.it?subject=Migrazione%20da%20scuolawebinar.it">
+        academy@sintab.it →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="wrap">
+    <span class="kicker">Cosa trovi oggi</span>
+    <h2>Quattro percorsi, un solo posto dove certificarti</h2>
+    <div class="grid">
+
+      <div class="card">
+        <span class="eyebrow">ABA</span>
+        <h3>Formazione ABA</h3>
+        <p>Percorsi e tecniche di Applied Behavior Analysis, per chi lavora nell'autismo e nei bisogni educativi speciali.</p>
+        <a class="link" href="https://sintabacademy.it" target="_blank" rel="noopener">Scopri i corsi <span class="arrow">→</span></a>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Inglese</span>
+        <h3>Certificazione Inglese</h3>
+        <p>Preparazione B1/B2 riconosciuta per graduatorie e uso professionale.</p>
+        <a class="link" href="https://sintabacademy.it" target="_blank" rel="noopener">Prenota il test <span class="arrow">→</span></a>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">IDCert</span>
+        <h3>Certificazioni Informatiche</h3>
+        <p>Competenze digitali certificate, valide per punteggio e mercato del lavoro.</p>
+        <a class="link" href="https://sintabacademy.it" target="_blank" rel="noopener">Vedi le certificazioni <span class="arrow">→</span></a>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">eCampus L2</span>
+        <h3>Laurea Online (L2)</h3>
+        <p>Percorsi di laurea telematica in convenzione, per chi lavora e vuole abilitarsi.</p>
+        <a class="link" href="https://sintabacademy.it" target="_blank" rel="noopener">Richiedi info <span class="arrow">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Il resto della formazione ti aspetta su Sintab Academy</h2>
+    <a class="btn-gold" href="https://sintabacademy.it" target="_blank" rel="noopener">Vai su Sintab Academy</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Sintab Academy fa parte del gruppo Sintab · <a href="mailto:academy@sintab.it">academy@sintab.it</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
